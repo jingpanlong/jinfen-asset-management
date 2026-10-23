@@ -34,3 +34,25 @@ Windows原生托盘显示、收起、恢复通过，未开启用户真实自启�
 打包EXE自检（--smoke-test）结果：owner_account = true（内置管理员账号随首次登录自动生成，其 id 记录在 meta.owner_user_id；注册只得到只读账号；被授权管理员无法停用内置账号，也无法调整其他管理员）；lan_share = true（主机端共享服务可启动并接受局域网客户端真实读写，共享白名单正确拦截危险语句）；share_screen = true（共享模式对危险 SQL 的拦截在打包版中同样生效）；table_center = true（台账等全部表格的表头与数据单元格均以居中代理渲染）；password_eye = true（登录 / 注册 / 改密 / 重置密码 / 数据库连接等全部密文输入框均带小眼睛，可在密文与明文间切换）；crud_delete = true（未被引用的资产可删除、被引用的资产拒绝删除且写入审计）；cursor_guard = true（弹窗打开期间无等待光标，关闭后恢复，操作结束无残留）；permissions = 43。
 
 本次安装包端到端复验（2026-10-13，一次不中断的完整流程）：将安装版静默安装到临时目录后，确认已安装程序中自带更新后的「2.4高级权限使用说明.txt」与「使用说明.txt」，且**不包含**记录出厂口令明文的文件（该文件只保存在开发目录，未加入安装脚本）；从已安装的程序直接运行 --smoke-test，结果全部通过（ok = true、owner_account = true、lan_share = true、share_screen = true、permissions = 43）；随后静默卸载，安装目录被清除、开始菜单与卸载注册表项均无残留，应用数据目录中的公司数据库 assets.db 的 SHA256 与修改时间在安装、自检与卸载全程保持不变（全程未触碰公司数据）。
+
+────────────────────────────────────────────
+
+GitHub 开源版更新（2026-10-23）：
+
+本版完成开源发布。源码仓库：https://github.com/jingpanlong/jinfen-asset-management（MIT License，README 含界面截图、功能总览、三种存储模式说明、从源码运行与构建指引、常见问题；.gitignore 明确排除内置管理员口令明文文件、数据库连接配置与全部二进制产物，推送前经暂存区扫描确认无明文口令、无数据库与 EXE 文件入库）。
+
+「关于系统」对话框更新：新增「开源地址」小节，显示可点击的 GitHub 仓库链接（点击直接在浏览器打开）；底部新增「复制开源地址」「打开 GitHub 主页」按钮；「复制联系方式」同步携带 GitHub 地址。安装包 [Files] 新增 LICENSE.txt（MIT 许可随包分发）。
+
+代码改动：source/ui_extras.py（新增 GITHUB_URL 常量与 AboutDialog 三处入口，链接经 anchorClicked 转 QDesktopServices 打开）、source/installer.iss（打包 LICENSE.txt）、新增 README.md / LICENSE / .gitignore / docs/（截图与 Release 说明）。
+
+全量 162 项单元测试重跑通过（2026-10-23，Python 3.11，offscreen 模式，84 秒）。
+
+本次重新打包产物（2026-10-23 开源版，隔离 PATH 构建）：
+锦纷资产管理系统.exe 64,744,565 字节 b6d9e4707963df4828347227c995e16c02c7998325b2cedf471266169dfe3ede
+锦纷资产管理系统-安装版-2.5.0.exe 65,705,475 字节 47001142060449349bbd8c13c1f4d20d4db8b42151807b3ff20927515604e7a6
+
+打包EXE自检（--smoke-test，2026-10-23）：ok = true、version = 2.5.0、pages = 16、permissions = 43、owner_account = true、lan_share = true、share_screen = true，全部通过；smoke-about 截图确认「开源地址」小节与链接渲染正确。
+
+安装版端到端复验（2026-10-23）：静默安装 exit=0（确认 LICENSE.txt 已随包安装）→ 已安装程序 --smoke-test exit=0（ok = true 全项通过）→ 静默卸载 exit=0 → 安装目录清除确认。全程未触碰公司数据。
+
+Release：https://github.com/jingpanlong/jinfen-asset-management/releases/tag/v2.5.0（tag v2.5.0，附件含单文件版与安装版两个 EXE，Release 说明含两文件 SHA256 校验值）。

@@ -69,3 +69,4 @@ end;
 Source: "..\2.5资产图片与详情使用说明.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\2.6增删改查使用说明.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\2.7局域网共享使用说明.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\LICENSE"; DestDir: "{app}"; DestName: "LICENSE.txt"; Flags: ignoreversion
