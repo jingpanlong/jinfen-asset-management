@@ -1,0 +1,29 @@
+锦纷资产管理系统使用以下第三方组件，版权归各项目及贡献者所有。
+
+Python 3.11：Python Software Foundation License。
+PySide6 / Qt 6：LGPL v3 / GPL v3 / 商业许可体系，本软件使用动态链接的开源组件。
+Shiboken6：LGPL / GPL，随 PySide6 提供。
+PyInstaller：GPL v2，并带允许发布打包应用的 bootloader 特殊例外。
+Psycopg 3：LGPL v3。
+libpq / PostgreSQL：PostgreSQL License。
+openpyxl：MIT License。
+qrcode：BSD License。
+Pillow：HPND / MIT-CMU 等，详见项目许可证。
+Inno Setup 6.2.2：Inno Setup License，安装器使用其运行组件。
+
+完整源码及重建脚本随附，可使用更新或替换后的兼容 Qt / PySide6 组件重新打包。
+EXE 单文件在运行时把动态组件解压至临时目录，不修改第三方组件。
+许可证原文位于 licenses 目录，源码内无预设公司数据、数据库密码或注册账号。
+
+项目及许可信息：
+https://www.python.org/
+https://doc.qt.io/qtforpython-6/licenses.html
+https://www.qt.io/licensing/open-source-lgpl-obligations
+https://pyinstaller.org/en/stable/license.html
+https://www.psycopg.org/psycopg3/
+https://www.postgresql.org/about/licence/
+https://openpyxl.readthedocs.io/
+https://github.com/lincolnloop/python-qrcode
+https://pillow.readthedocs.io/en/stable/about.html
+https://jrsoftware.org/isinfo.php
+

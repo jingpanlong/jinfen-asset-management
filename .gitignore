@@ -1,0 +1,48 @@
+# ===== 敏感文件：绝不允许进入仓库 =====
+# 内置管理员明口令说明（仅发行方本地保存）
+内置管理员口令-请勿分发.txt
+# 数据库连接配置与共享口令（含 DPAPI 加密串）
+connection.json
+share.json
+
+# ===== 数据库与运行数据 =====
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+backups/
+*.bak
+
+# ===== 构建中间产物 =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+source/build/
+dist/
+*.spec.bak
+
+# ===== 二进制发行物（通过 GitHub Releases 分发，不进仓库）=====
+portable/
+installer/
+*.exe
+*.msi
+*.zip
+*.7z
+
+# ===== 编辑器与系统 =====
+.vscode/
+.idea/
+.workbuddy/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 本地调试 =====
+*.log
+smoke-result.json
+smoke-*.png
