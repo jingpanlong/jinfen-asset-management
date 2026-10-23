@@ -56,3 +56,5 @@ GitHub 开源版更新（2026-10-23）：
 安装版端到端复验（2026-10-23）：静默安装 exit=0（确认 LICENSE.txt 已随包安装）→ 已安装程序 --smoke-test exit=0（ok = true 全项通过）→ 静默卸载 exit=0 → 安装目录清除确认。全程未触碰公司数据。
 
 Release：https://github.com/jingpanlong/jinfen-asset-management/releases/tag/v2.5.0（tag v2.5.0，附件含单文件版与安装版两个 EXE，Release 说明含两文件 SHA256 校验值）。
+
+注：受发布环境代理限制，GitHub Release 资产实际文件名为 portal_cn.exe（单文件版，64,744,565 字节）与 installer_cn.exe（安装版，65,705,475 字节），下载页即显示此二名；其 SHA256 与上文一致。
